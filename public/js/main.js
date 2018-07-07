@@ -3,7 +3,7 @@ const vm = new Vue({
 	el: "#app",
 	data: {
 		WIDTH: window.innerWidth - 50,
-		angleStep: (-1+Math.sqrt(5))*0.5*Math.PI,
+		angleStep: (-1+Math.sqrt(5))*0.5*Math.PI*2,
 		radiusStep: 1,
 		pointAmount: 90,
 		ratio: 16/8,
@@ -99,7 +99,7 @@ function changeRadius() {
 }
 function changeAngleStep() {
 	t += 1 / 2048;
-	vm.angleStep = (-Math.cos(t)+1)*0.5*Math.PI * 2;
+	vm.angleStep = (-Math.cos(t+1)+1)*0.5*Math.PI * 2;
 	requestAnimationFrame(changeAngleStep);
 }
 changeAngleStep();
