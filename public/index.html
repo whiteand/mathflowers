@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Flowers</title>
+		<script src="js/vue.js"></script>
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+		<div id="app">
+			<canvas id="canvas" ref="canvas" :width="WIDTH" :height="HEIGHT"></canvas>
+			<br>
+			<div id="input">
+				<table>
+					<tbody>
+						<tr>
+							<th>Параметр</th>
+							<th>Значение</th>
+						</tr>
+						<tr>
+							<td>Шаг по расстоянию от центра(пиксели)</td>
+							<td><input type="range" class="range" v-model.number="radiusStep" min="0" max="20" step="0.1"></td>
+							<td>{{ radiusStep }}</td>
+						</tr>
+						<tr>
+							<td>Шаг по углу(радиан)</td>
+							<td><input type="range" class="range" v-model.number="angleStep" min="0" max="3.1415926" step="0.0001"></td>
+							<td>{{angleStep.toFixed(4)}}</td>
+						</tr>
+						<tr>
+							<td>Кол-во точек</td>
+							<td><input type="range" class="range" v-model.number="pointAmount" min="0" max="200" step="1"></td>
+							<td>{{pointAmount}}</td>
+						</tr>
+						<tr>
+							<td>Рисовать линии?</td>
+							<td><input type="checkbox" v-model="drawLines"></td>
+							<td>{{drawLines ? "Да" : "Нет"}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			
+		</div>
+		<script src="js/main.js"></script>
+	</body>
+</html>
