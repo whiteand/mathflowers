@@ -99,7 +99,7 @@ function changeRadius() {
 }
 function changeAngleStep() {
 	t += 1 / 2048;
-	vm.angleStep = (Math.sin(t)+1)*0.5*Math.PI * 2;
+	vm.angleStep = (-Math.cos(t)+1)*0.5*Math.PI * 2;
 	requestAnimationFrame(changeAngleStep);
 }
 changeAngleStep();
